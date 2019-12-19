@@ -24,9 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
         $schedule->call('App\Http\Controllers\HomeController@getCurl')->cron('* */3 * * *');
+        // $schedule->call('App\Http\Controllers\HomeController@getCurl')->everyMinute();
     }
 
     /**
